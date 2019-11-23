@@ -48,7 +48,6 @@ auto list_impl(
         const std::filesystem::directory_options& options) -> basic_directory_listing<CharT> {
     auto path = generic_path_as<CharT>(directory.path());
     auto node = basic_directory_listing<CharT>(path);
-    //std::cout << depth << std::endl;
     if (depth) {
         for (const auto& entry : std::filesystem::directory_iterator(directory, options)) {
             auto doFollowSymlink = static_cast<bool>(std::filesystem::directory_options::follow_directory_symlink & options);
